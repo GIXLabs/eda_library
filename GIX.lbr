@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.7.0">
+<eagle version="9.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -36,8 +36,8 @@
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
@@ -224,6 +224,36 @@ LIS3DH</text>
 <wire x1="2.54" y1="-19.05" x2="2.54" y2="-15.24" width="0.1524" layer="21"/>
 <wire x1="2.54" y1="-15.24" x2="-2.54" y2="-15.24" width="0.1524" layer="21"/>
 </package>
+<package name="LOGO">
+<polygon width="0.025" layer="1">
+<vertex x="7.75165" y="19.040409375"/>
+<vertex x="0.02328125" y="19.040409375"/>
+<vertex x="9.42265" y="9.71066875"/>
+<vertex x="0.58028125" y="0.009590625"/>
+<vertex x="7.98373125" y="0.009590625"/>
+<vertex x="13.321640625" y="5.83488125"/>
+<vertex x="14.78376875" y="4.372759375"/>
+<vertex x="22.442509375" y="4.372759375"/>
+<vertex x="16.96535" y="9.826709375"/>
+<vertex x="21.421340625" y="14.70045"/>
+<vertex x="13.99468125" y="14.70045"/>
+<vertex x="13.089559375" y="13.7025"/>
+</polygon>
+<polygon width="0.025" layer="29">
+<vertex x="7.75165" y="19.040409375"/>
+<vertex x="0.02328125" y="19.040409375"/>
+<vertex x="9.42265" y="9.71066875"/>
+<vertex x="0.58028125" y="0.009590625"/>
+<vertex x="7.98373125" y="0.009590625"/>
+<vertex x="13.321640625" y="5.83488125"/>
+<vertex x="14.78376875" y="4.372759375"/>
+<vertex x="22.442509375" y="4.372759375"/>
+<vertex x="16.96535" y="9.826709375"/>
+<vertex x="21.421340625" y="14.70045"/>
+<vertex x="13.99468125" y="14.70045"/>
+<vertex x="13.089559375" y="13.7025"/>
+</polygon>
+</package>
 </packages>
 <symbols>
 <symbol name="ADAFRUIT_LIS3DH">
@@ -362,6 +392,9 @@ ONLY</text>
 <wire x1="-12.7" y1="-35.56" x2="12.7" y2="-35.56" width="0.1524" layer="94"/>
 <wire x1="12.7" y1="-35.56" x2="12.7" y2="27.94" width="0.1524" layer="94"/>
 <wire x1="12.7" y1="27.94" x2="-12.7" y2="27.94" width="0.1524" layer="94"/>
+</symbol>
+<symbol name="LOGO">
+<text x="0" y="0" size="1.778" layer="94" font="vector">GIX LOGO</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -518,6 +551,18 @@ ONLY</text>
 <connect gate="G$1" pin="TXD" pad="TXD"/>
 <connect gate="G$1" pin="VCC" pad="VCC"/>
 </connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LOGO">
+<gates>
+<gate name="G$1" symbol="LOGO" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="LOGO">
 <technologies>
 <technology name=""/>
 </technologies>
