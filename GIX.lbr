@@ -254,6 +254,11 @@ LIS3DH</text>
 <vertex x="13.089559375" y="13.7025"/>
 </polygon>
 </package>
+<package name="JST_PH">
+<pad name="POS" x="0" y="1.5" drill="1.016" diameter="1.9304"/>
+<pad name="GND" x="0" y="-1.5" drill="1.016" diameter="1.9304" shape="square"/>
+<text x="-3.5" y="0.5" size="1.778" layer="1">+</text>
+</package>
 </packages>
 <symbols>
 <symbol name="ADAFRUIT_LIS3DH">
@@ -395,6 +400,14 @@ ONLY</text>
 </symbol>
 <symbol name="LOGO">
 <text x="0" y="0" size="1.778" layer="94" font="vector">GIX LOGO</text>
+</symbol>
+<symbol name="LIPO_BATTERY">
+<pin name="POS" x="0" y="7.62" visible="off" length="middle" rot="R270"/>
+<pin name="NEG" x="0" y="-10.16" visible="off" length="middle" rot="R90"/>
+<wire x1="-5.08" y1="2.54" x2="5.08" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="-5.08" y1="-2.54" x2="5.08" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-5.08" x2="2.54" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -563,6 +576,22 @@ ONLY</text>
 </gates>
 <devices>
 <device name="" package="LOGO">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LIPO_BATTERY">
+<gates>
+<gate name="G$1" symbol="LIPO_BATTERY" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="JST_PH">
+<connects>
+<connect gate="G$1" pin="NEG" pad="GND"/>
+<connect gate="G$1" pin="POS" pad="POS"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>
