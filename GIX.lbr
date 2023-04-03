@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -267,6 +267,25 @@ LIS3DH</text>
 <text x="-3.81" y="0" size="0.8128" layer="21">COM</text>
 <text x="-2.54" y="-2.54" size="0.8128" layer="21">B</text>
 </package>
+<package name="RFM95W">
+<smd name="GND" x="-7" y="7" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="MISO" x="-7" y="5" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="MOSI" x="-7" y="3" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="SCK" x="-7" y="1" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="NSS" x="-7" y="-1" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="RESET" x="-7" y="-3" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="DIO5" x="-7" y="-5" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="GND1" x="-7" y="-7" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="DIO2" x="7" y="7" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="DIO1" x="7" y="5" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="DIO0" x="7" y="3" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="3V3" x="7" y="1" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="DIO4" x="7" y="-1" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="DIO3" x="7" y="-3" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="GND2" x="7" y="-5" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<smd name="ANA" x="7" y="-7" dx="2.54" dy="1.27" layer="1" roundness="14"/>
+<rectangle x1="-5" y1="1" x2="1" y2="7" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ADAFRUIT_LIS3DH">
@@ -430,6 +449,27 @@ ONLY</text>
 <wire x1="-7.62" y1="5.08" x2="-12.7" y2="5.08" width="0.1524" layer="94"/>
 <wire x1="-12.7" y1="5.08" x2="-12.7" y2="2.54" width="0.1524" layer="94"/>
 <wire x1="-12.7" y1="2.54" x2="-7.62" y2="2.54" width="0.1524" layer="94"/>
+</symbol>
+<symbol name="RFM95W">
+<pin name="DIO2" x="15.24" y="5.08" length="middle" rot="R180"/>
+<pin name="DIO1" x="15.24" y="7.62" length="middle" rot="R180"/>
+<pin name="DIO0" x="15.24" y="10.16" length="middle" rot="R180"/>
+<pin name="3V3" x="-15.24" y="7.62" length="middle"/>
+<pin name="DIO4" x="15.24" y="0" length="middle" rot="R180"/>
+<pin name="DIO3" x="15.24" y="2.54" length="middle" rot="R180"/>
+<pin name="GND" x="15.24" y="-12.7" length="middle" rot="R180"/>
+<pin name="ANA" x="15.24" y="-7.62" length="middle" rot="R180"/>
+<pin name="MISO" x="-15.24" y="0" length="middle"/>
+<pin name="MOSI" x="-15.24" y="-2.54" length="middle"/>
+<pin name="SCK" x="-15.24" y="-5.08" length="middle"/>
+<pin name="NSS" x="-15.24" y="-12.7" length="middle"/>
+<pin name="RESET" x="-15.24" y="10.16" length="middle"/>
+<pin name="DIO5" x="15.24" y="-2.54" length="middle" rot="R180"/>
+<wire x1="-10.16" y1="12.7" x2="10.16" y2="12.7" width="0.1524" layer="94"/>
+<wire x1="10.16" y1="12.7" x2="10.16" y2="-15.24" width="0.1524" layer="94"/>
+<wire x1="10.16" y1="-15.24" x2="-10.16" y2="-15.24" width="0.1524" layer="94"/>
+<wire x1="-10.16" y1="-15.24" x2="-10.16" y2="12.7" width="0.1524" layer="94"/>
+<text x="-5.08" y="15.24" size="1.778" layer="94">RFM95W</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -630,6 +670,34 @@ ONLY</text>
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="B" pad="B"/>
 <connect gate="G$1" pin="COM" pad="COM"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="RFM95W">
+<gates>
+<gate name="G$1" symbol="RFM95W" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="RFM95W">
+<connects>
+<connect gate="G$1" pin="3V3" pad="3V3"/>
+<connect gate="G$1" pin="ANA" pad="ANA"/>
+<connect gate="G$1" pin="DIO0" pad="DIO0"/>
+<connect gate="G$1" pin="DIO1" pad="DIO1"/>
+<connect gate="G$1" pin="DIO2" pad="DIO2"/>
+<connect gate="G$1" pin="DIO3" pad="DIO3"/>
+<connect gate="G$1" pin="DIO4" pad="DIO4"/>
+<connect gate="G$1" pin="DIO5" pad="DIO5"/>
+<connect gate="G$1" pin="GND" pad="GND GND1 GND2"/>
+<connect gate="G$1" pin="MISO" pad="MISO"/>
+<connect gate="G$1" pin="MOSI" pad="MOSI"/>
+<connect gate="G$1" pin="NSS" pad="NSS"/>
+<connect gate="G$1" pin="RESET" pad="RESET"/>
+<connect gate="G$1" pin="SCK" pad="SCK"/>
 </connects>
 <technologies>
 <technology name=""/>
