@@ -286,6 +286,12 @@ LIS3DH</text>
 <smd name="ANA" x="7" y="-7" dx="2.54" dy="1.27" layer="1" roundness="14"/>
 <rectangle x1="-5" y1="1" x2="1" y2="7" layer="21"/>
 </package>
+<package name="2032_SMD">
+<smd name="N" x="0" y="0" dx="15.24" dy="15.24" layer="1" roundness="100"/>
+<smd name="P1" x="-10.922" y="0" dx="2.794" dy="5.08" layer="1"/>
+<smd name="P2" x="10.922" y="0" dx="2.794" dy="5.08" layer="1"/>
+<text x="-7.62" y="8.89" size="1.778" layer="21">2032 HOLDER</text>
+</package>
 </packages>
 <symbols>
 <symbol name="ADAFRUIT_LIS3DH">
@@ -428,7 +434,7 @@ ONLY</text>
 <symbol name="LOGO">
 <text x="0" y="0" size="1.778" layer="94" font="vector">GIX LOGO</text>
 </symbol>
-<symbol name="LIPO_BATTERY">
+<symbol name="BATTERY">
 <pin name="POS" x="0" y="7.62" visible="off" length="middle" rot="R270"/>
 <pin name="NEG" x="0" y="-10.16" visible="off" length="middle" rot="R90"/>
 <wire x1="-5.08" y1="2.54" x2="5.08" y2="2.54" width="0.1524" layer="94"/>
@@ -646,7 +652,7 @@ ONLY</text>
 </deviceset>
 <deviceset name="LIPO_BATTERY">
 <gates>
-<gate name="G$1" symbol="LIPO_BATTERY" x="0" y="0"/>
+<gate name="G$1" symbol="BATTERY" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="JST_PH">
@@ -698,6 +704,22 @@ ONLY</text>
 <connect gate="G$1" pin="NSS" pad="NSS"/>
 <connect gate="G$1" pin="RESET" pad="RESET"/>
 <connect gate="G$1" pin="SCK" pad="SCK"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="2032_HOLDER_SMD">
+<gates>
+<gate name="G$1" symbol="BATTERY" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="2032_SMD">
+<connects>
+<connect gate="G$1" pin="NEG" pad="N"/>
+<connect gate="G$1" pin="POS" pad="P1 P2"/>
 </connects>
 <technologies>
 <technology name=""/>
