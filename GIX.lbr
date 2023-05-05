@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -353,6 +353,36 @@ LIS3DH</text>
 <text x="1.27" y="-6.985" size="1.016" layer="21">A1</text>
 <text x="1.27" y="-9.525" size="1.016" layer="21">A2</text>
 </package>
+<package name="MAX30102">
+<pad name="GND1" x="-5.08" y="3.81" drill="1.016" diameter="1.778"/>
+<pad name="RD" x="-5.08" y="1.27" drill="1.016" diameter="1.778"/>
+<pad name="IRD" x="-5.08" y="-1.27" drill="1.016" diameter="1.778"/>
+<pad name="INT" x="-5.08" y="-3.81" drill="1.016" diameter="1.778"/>
+<pad name="VIN" x="5.08" y="3.81" drill="1.016" diameter="1.778"/>
+<pad name="SDA" x="5.08" y="1.27" drill="1.016" diameter="1.778"/>
+<pad name="SCL" x="5.08" y="-1.27" drill="1.016" diameter="1.778"/>
+<pad name="GND" x="5.08" y="-3.81" drill="1.016" diameter="1.778"/>
+<text x="7.62" y="3.81" size="1.016" layer="21">VIN</text>
+<text x="7.62" y="1.27" size="1.016" layer="21">SDA</text>
+<text x="7.62" y="-1.27" size="1.016" layer="21">SCL</text>
+<text x="7.62" y="-3.81" size="1.016" layer="21">GND</text>
+<text x="-10.16" y="-3.81" size="1.016" layer="21">INT</text>
+<text x="-10.16" y="-1.27" size="1.016" layer="21">IRD</text>
+<text x="-10.16" y="1.27" size="1.016" layer="21">RD</text>
+<text x="-10.16" y="3.81" size="1.016" layer="21">GND</text>
+<wire x1="-2.54" y1="1.27" x2="2.54" y2="1.27" width="0.1524" layer="51"/>
+<wire x1="2.54" y1="1.27" x2="2.54" y2="-1.27" width="0.1524" layer="51"/>
+<wire x1="2.54" y1="-1.27" x2="-2.54" y2="-1.27" width="0.1524" layer="51"/>
+<wire x1="-2.54" y1="-1.27" x2="-2.54" y2="1.27" width="0.1524" layer="51"/>
+<wire x1="7.62" y1="9.144" x2="7.62" y2="-9.144" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="-9.144" x2="6.604" y2="-10.16" width="0.1524" layer="21"/>
+<wire x1="6.604" y1="-10.16" x2="-6.604" y2="-10.16" width="0.1524" layer="21"/>
+<wire x1="-6.604" y1="-10.16" x2="-7.62" y2="-9.144" width="0.1524" layer="21"/>
+<wire x1="-7.62" y1="-9.144" x2="-7.62" y2="9.144" width="0.1524" layer="21"/>
+<wire x1="-7.62" y1="9.144" x2="-6.604" y2="10.16" width="0.1524" layer="21"/>
+<wire x1="-6.604" y1="10.16" x2="6.604" y2="10.16" width="0.1524" layer="21"/>
+<wire x1="6.604" y1="10.16" x2="7.62" y2="9.144" width="0.1524" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ADAFRUIT_LIS3DH">
@@ -577,6 +607,21 @@ ONLY</text>
 <wire x1="7.62" y1="-7.62" x2="-7.62" y2="-7.62" width="0.1524" layer="94"/>
 <wire x1="-7.62" y1="-7.62" x2="-7.62" y2="10.16" width="0.1524" layer="94"/>
 <text x="-7.62" y="-7.62" size="1.016" layer="94">MAX30205</text>
+</symbol>
+<symbol name="MAX30102">
+<pin name="VIN" x="-20.32" y="15.24" length="middle"/>
+<pin name="SDA" x="7.62" y="7.62" length="middle" rot="R180"/>
+<pin name="SCL" x="7.62" y="5.08" length="middle" rot="R180"/>
+<pin name="GND" x="7.62" y="-5.08" length="middle" rot="R180"/>
+<pin name="RD" x="7.62" y="12.7" length="middle" rot="R180"/>
+<pin name="IRD" x="7.62" y="15.24" length="middle" rot="R180"/>
+<pin name="INT" x="7.62" y="0" length="middle" rot="R180"/>
+<wire x1="-15.24" y1="17.78" x2="2.54" y2="17.78" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="17.78" x2="2.54" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-7.62" x2="-15.24" y2="-7.62" width="0.1524" layer="94"/>
+<wire x1="-15.24" y1="-7.62" x2="-15.24" y2="17.78" width="0.1524" layer="94"/>
+<text x="-10.16" y="22.86" size="1.016" layer="94">MAX30102</text>
+<text x="-10.16" y="20.32" size="1.016" layer="94">GSR SENSOR</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -882,6 +927,27 @@ ONLY</text>
 <connect gate="G$1" pin="SCL" pad="SCL"/>
 <connect gate="G$1" pin="SDA" pad="SDA"/>
 <connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MAX30102">
+<gates>
+<gate name="G$1" symbol="MAX30102" x="7.62" y="-5.08"/>
+</gates>
+<devices>
+<device name="" package="MAX30102">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND GND1"/>
+<connect gate="G$1" pin="INT" pad="INT"/>
+<connect gate="G$1" pin="IRD" pad="IRD"/>
+<connect gate="G$1" pin="RD" pad="RD"/>
+<connect gate="G$1" pin="SCL" pad="SCL"/>
+<connect gate="G$1" pin="SDA" pad="SDA"/>
+<connect gate="G$1" pin="VIN" pad="VIN"/>
 </connects>
 <technologies>
 <technology name=""/>
